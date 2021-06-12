@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job-scheduling-data xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData http://www.quartz-scheduler.org/xml/job_scheduling_data_1_8.xsd"
+                     version="1.8">
+    <pre-processing-commands>
+        <!-- clear all jobs in scheduler -->
+        <delete-jobs-in-group>*</delete-jobs-in-group>
+        <!-- clear all triggers in scheduler -->
+        <delete-triggers-in-group>*</delete-triggers-in-group>
+    </pre-processing-commands>
+    <processing-directives>
+        <!-- if there are any jobs/trigger in scheduler of same name (as in this file), overwrite them -->
+        <overwrite-existing-data>true</overwrite-existing-data>
+        <!-- if there are any jobs/trigger in scheduler of same name (as in this file), and over-write is false, ignore them rather then generating an error -->
+        <ignore-duplicates>false</ignore-duplicates>
+    </processing-directives>
+    <schedule>
+    <!--
+        <job>
+            <name>JobTest</name>
+            <job-class>wsscheduler.jobs.JobTest</job-class>
+        </job>
+        <trigger>
+            <simple>
+                <name>SimpleJobTest</name>
+                <job-name>JobTest</job-name>
+                <misfire-instruction>MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT</misfire-instruction>
+                <repeat-count>-1</repeat-count>
+                <repeat-interval>2000</repeat-interval>
+            </simple>
+        </trigger>
+    -->
+        <job>
+            <name>JobWSFeed1</name>
+            <job-class>wsscheduler.jobs.JobWSFeed1</job-class>
+        </job>
+        <trigger>
+            <simple>
+                <name>SimpleJobWSFeed1</name>
+                <job-name>JobWSFeed1</job-name>
+                <misfire-instruction>MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT</misfire-instruction>
+                <!-- repeat indefinitely  -->
+                <repeat-count>-1</repeat-count>
+                <!--  every 20 seconds -->
+                <repeat-interval>5000</repeat-interval>
+            </simple>
+        </trigger>
+        <job>
+            <name>JobWSFeed2</name>
+            <job-class>wsscheduler.jobs.JobWSFeed2</job-class>
+        </job>
+        <trigger>
+            <simple>
+                <name>SimpleJobWSFeed2</name>
+                <job-name>JobWSFeed2</job-name>
+                <misfire-instruction>MISFIRE_INSTRUCTION_RESCHEDULE_NEXT_WITH_REMAINING_COUNT</misfire-instruction>
+                <!-- repeat indefinitely  -->
+                <repeat-count>-1</repeat-count>
+                <!--  every 20 seconds -->
+                <repeat-interval>5000</repeat-interval>
+            </simple>
+        </trigger>
+    </schedule>
+</job-scheduling-data>

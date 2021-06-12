@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+    <persistence-unit name="WSScheduler" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <non-jta-data-source>jdbc/si_admin</non-jta-data-source>
+        <class>wsscheduler.db.WebserviceFeed1</class>
+        <class>wsscheduler.db.WebserviceFeed2</class>
+        <properties>
+            <property name="eclipselink.target-server" value="WebLogic_10"/>
+            <property name="eclipselink.target-database" value="Oracle11"/>
+            <property name="eclipselink.logging.logger" value="ServerLogger"/>
+			<property name="eclipselink.cache.type.default" value="None"/>
+        </properties>
+    </persistence-unit>
+</persistence>

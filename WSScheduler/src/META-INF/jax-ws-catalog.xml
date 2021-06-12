@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://10.112.6.14:9001/OSB_AKSES/ProxyService/ProxyServiceOSB2/#%7Bhttp%3A%2F%2Ftempuri.org%2F%7DService?wsdl"
+          uri="../wsscheduler/ws/Service.wsdl"/>
+</catalog>

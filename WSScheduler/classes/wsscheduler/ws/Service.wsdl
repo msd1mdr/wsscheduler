@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WL5G3N0:definitions targetNamespace="http://tempuri.org/" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://tempuri.org/" xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <WL5G3N0:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/Services.asmx/getResponseFile" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <s:import namespace="http://tempuri.org/Services.asmx/getResponseFile"/>
+      <s:element name="ReceiveDataStatic">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="memberCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" ref="s1:getFileResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveDataStaticResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="ReceiveDataStaticResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveDataInvestor">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="memberCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" ref="s1:getFileResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveDataInvestorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="ReceiveDataInvestorResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatorDataInvestor">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="memberCode" type="s:string"/>
+            <s:element maxOccurs="1" minOccurs="1" ref="s1:getFileResponse"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatorDataInvestorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="1" name="ValidatorDataInvestorResult" type="s:int"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConnection">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="memberCode" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element maxOccurs="1" minOccurs="0" name="CheckConnectionResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/Services.asmx/getResponseFile" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/Services.asmx/getResponseFile" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <s:element name="getFileResponse" nillable="true" type="s1:CFileContent"/>
+      <s:complexType name="CFileContent">
+        <s:sequence>
+          <s:element maxOccurs="1" minOccurs="0" name="fileContents" type="s:base64Binary"/>
+          <s:element maxOccurs="1" minOccurs="1" name="sizeInBytes" type="s:int"/>
+          <s:element maxOccurs="1" minOccurs="1" name="crc32" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </WL5G3N0:types>
+  <WL5G3N0:message name="ReceiveDataStaticSoapIn">
+    <WL5G3N0:part element="WL5G3N1:ReceiveDataStatic" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ReceiveDataStaticSoapOut">
+    <WL5G3N0:part element="WL5G3N1:ReceiveDataStaticResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ReceiveDataInvestorSoapIn">
+    <WL5G3N0:part element="WL5G3N1:ReceiveDataInvestor" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ReceiveDataInvestorSoapOut">
+    <WL5G3N0:part element="WL5G3N1:ReceiveDataInvestorResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ValidatorDataInvestorSoapIn">
+    <WL5G3N0:part element="WL5G3N1:ValidatorDataInvestor" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="ValidatorDataInvestorSoapOut">
+    <WL5G3N0:part element="WL5G3N1:ValidatorDataInvestorResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CheckConnectionSoapIn">
+    <WL5G3N0:part element="WL5G3N1:CheckConnection" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="CheckConnectionSoapOut">
+    <WL5G3N0:part element="WL5G3N1:CheckConnectionResponse" name="parameters"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="ServiceSoap">
+    <WL5G3N0:operation name="ReceiveDataStatic">
+      <WL5G3N0:input message="WL5G3N1:ReceiveDataStaticSoapIn"/>
+      <WL5G3N0:output message="WL5G3N1:ReceiveDataStaticSoapOut"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ReceiveDataInvestor">
+      <WL5G3N0:input message="WL5G3N1:ReceiveDataInvestorSoapIn"/>
+      <WL5G3N0:output message="WL5G3N1:ReceiveDataInvestorSoapOut"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ValidatorDataInvestor">
+      <WL5G3N0:input message="WL5G3N1:ValidatorDataInvestorSoapIn"/>
+      <WL5G3N0:output message="WL5G3N1:ValidatorDataInvestorSoapOut"/>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CheckConnection">
+      <WL5G3N0:input message="WL5G3N1:CheckConnectionSoapIn"/>
+      <WL5G3N0:output message="WL5G3N1:CheckConnectionSoapOut"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="ServiceSoap" type="WL5G3N1:ServiceSoap">
+    <WL5G3N2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="ReceiveDataStatic">
+      <WL5G3N2:operation soapAction="http://tempuri.org/ReceiveDataStatic" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ReceiveDataInvestor">
+      <WL5G3N2:operation soapAction="http://tempuri.org/ReceiveDataInvestor" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ValidatorDataInvestor">
+      <WL5G3N2:operation soapAction="http://tempuri.org/ValidatorDataInvestor" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CheckConnection">
+      <WL5G3N2:operation soapAction="http://tempuri.org/CheckConnection" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N2:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:binding name="ServiceSoap12" type="WL5G3N1:ServiceSoap">
+    <WL5G3N3:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="ReceiveDataStatic">
+      <WL5G3N3:operation soapAction="http://tempuri.org/ReceiveDataStatic" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ReceiveDataInvestor">
+      <WL5G3N3:operation soapAction="http://tempuri.org/ReceiveDataInvestor" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="ValidatorDataInvestor">
+      <WL5G3N3:operation soapAction="http://tempuri.org/ValidatorDataInvestor" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+    <WL5G3N0:operation name="CheckConnection">
+      <WL5G3N3:operation soapAction="http://tempuri.org/CheckConnection" style="document"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body use="literal"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="Service">
+    <WL5G3N0:port binding="WL5G3N1:ServiceSoap12" name="ServiceSoap12">
+      <WL5G3N3:address location="http://10.112.6.14:9001/OSB_AKSES/ProxyService/ProxyServiceOSB2"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>
